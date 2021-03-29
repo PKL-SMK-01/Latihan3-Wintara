@@ -1,0 +1,15 @@
+<form class="mb-4" (ngSubmit)="updateEnployee()">
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-primary text-white" id="basic-addon1">Name</span>
+        <input type="text" class="form-control" name="name" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="enployee.name" required>
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-primary text-white" id="basic-addon2">Emaill</span>
+        <input type="text" class="form-control" name="email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2" [(ngModel)]="enployee.email" required>
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-primary text-white" id="basic-addon3">Salary</span>
+        <input type="text" class="form-control" name="salary" placeholder="Salary" aria-label="Salary" aria-describedby="basic-addon3" [(ngModel)]="enployee.salary" required>
+    </div>
+    <button type="submit" name="submit" class="btn btn-primary col-md-12">Submit</button>
+</form>

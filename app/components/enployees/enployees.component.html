@@ -1,0 +1,44 @@
+<div *ngIf="failed" class="mb-3 pt-2 pb-2 pr-2 pl-2 bg-danger text-white animate__animated animate__fadeIn animate__slow">&nbsp; {{failed}}</div>
+<div *ngIf="success" class="mb-3 pt-2 pb-2 pr-2 pl-2 bg-success text-white animate__animated animate__fadeIn animate__slow">&nbsp; {{success}}</div>
+
+
+<form class="mb-4" (ngSubmit)="insertData()">
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-primary text-white" id="basic-addon1">Name</span>
+        <input type="text" class="form-control" name="name" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="enployee.name" required>
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-primary text-white" id="basic-addon2">Emaill</span>
+        <input type="text" class="form-control" name="email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2" [(ngModel)]="enployee.email" required>
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-primary text-white" id="basic-addon3">Salary</span>
+        <input type="text" class="form-control" name="salary" placeholder="Salary" aria-label="Salary" aria-describedby="basic-addon3" [(ngModel)]="enployee.salary" required>
+    </div>
+    <button type="submit" name="submit" class="btn btn-primary col-md-12">Submit</button>
+</form>
+
+
+<table class="table border border-primary" >
+    <thead>
+        <tr class="text-center">
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let enp of enployees" data-ng-repeat="i" class="text-center">
+            <th scope="col">{{enp.id}}</th>
+            <td>{{enp.name}}</td>
+            <td>{{enp.email}}</td>
+            <td>{{enp.salary}}</td>
+            <td>
+                <button class="btn btn-danger btn-sm" (click)="deleteData(enp.id)">Delete</button>
+                <button class="btn btn-warning btn-sm mx-2" routerLink="edit/{{enp.id}}" >Edit</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
